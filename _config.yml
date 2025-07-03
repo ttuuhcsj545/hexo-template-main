@@ -10,7 +10,11 @@ keywords:
 author: John Doe
 language: zh-CN
 timezone: ''
+sitemap:
+  path: sitemap.xml
 
+baidusitemap:
+  path: baidusitemap.xml
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://example.com
