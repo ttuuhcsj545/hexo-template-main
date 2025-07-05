@@ -16,3 +16,4 @@ tags: [hexo, 个人博客,waline,评论系统]
 解决办法：添加自定义域名详情看[Vercel配置自定义域名](https://blog.csdn.net/weixin_67658096/article/details/135540102)配置完成后如果太慢可以用Edgeone加速一下详情看[Edgeone加速教程](https://cloud.tencent.com/document/product/1552/87601)
 ## 结束
 我总共就遇到这两个问题，大家还有什么问题可以在评论区讨论
+
