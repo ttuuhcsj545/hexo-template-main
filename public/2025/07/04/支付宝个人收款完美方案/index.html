@@ -20,10 +20,10 @@
   <meta name="keywords" content="">
 
 
-<meta name="description" content="Hello World">
+<meta name="description" content="原理通过支付宝官方账单查询接口，轮询来实现回调，使用易支付v1接口   前提条件 一个已实名支付宝账号(不限年龄) 一台服务器(可选) 宝塔面板(可选)  部署前准备工作 注册支付宝开发者账号进入https://open.alipay.com 点击右上角的登录，登录你的支付宝账号，完成之后进入控制台，第一次可能会要求你完善信息，填写即可   新建小程序，点击创建小程序输入名称和你的账号，点击创建回">
   
   
-  <title>我的第一篇文章 - Hexo</title>
+  <title>支付宝个人收款完美方案 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我的第一篇文章"></span>
+            <span id="subtitle" data-typed-text="支付宝个人收款完美方案"></span>
           
         </div>
 
@@ -200,8 +200,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-03 12:00" pubdate>
-          2025年7月3日 中午
+        <time datetime="2025-07-04 10:10" pubdate>
+          2025年7月4日 上午
         </time>
       </span>
     
@@ -212,7 +212,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1 字
+          422 字
         
       </span>
     
@@ -223,7 +223,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -260,12 +260,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">我的第一篇文章</h1>
+            <h1 id="seo-header">支付宝个人收款完美方案</h1>
             
             
               <div class="markdown-body">
                 
-                <p><strong>Hello World</strong>   </p>
+                <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>通过支付宝官方账单查询接口，轮询来实现回调，使用易支付v1接口  </p>
+<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul>
+<li>一个已实名支付宝账号(不限年龄)</li>
+<li>一台服务器(可选)</li>
+<li>宝塔面板(可选)</li>
+</ul>
+<h2 id="部署前准备工作"><a href="#部署前准备工作" class="headerlink" title="部署前准备工作"></a>部署前准备工作</h2><ol>
+<li>注册支付宝开发者账号<br>进入<a target="_blank" rel="noopener" href="https://open.alipay.com/">https://open.alipay.com</a> 点击右上角的登录，登录你的支付宝账号，完成之后进入控制台，第一次可能会要求你完善信息，填写即可  </li>
+<li>新建小程序，点击创建小程序<br><img src="https://vip.123pan.cn/1835397970/ymjew503t0m000d7w32xrtnsu2dgl5f4DIYwAID2Awr0DcxzBIex.png" srcset="/img/loading.gif" lazyload><br>输入名称和你的账号，点击创建<br><img src="https://vip.123pan.cn/1835397970/ymjew503t0l000d7w32x9e2onnxu6sb7DIYwAID2Awr0DcxzBIex.png" srcset="/img/loading.gif" lazyload><br>回到控制台，点击我们刚刚创建的小程序<br><img src="https://vip.123pan.cn/1835397970/yk6baz03t0m000d7w33g9xkxw5e7w72yDIYwAID2Awr0DcxzBIex.png" srcset="/img/loading.gif" lazyload><br>点击“开发设置”，选择接口加密方式，选择第一个“密钥”。<br><img src="https://lfs.k.topthink.com/lfs/5117a5529dc8c26a876089297a4714c0ca67362e076468a2b87292641adc1443.dat" srcset="/img/loading.gif" lazyload alt="1"><br><img src="https://lfs.k.topthink.com/lfs/274b3bc70c817ad0e061b32d9410aa0fed5b804a2f373e1b7dab79a8c86b46d4.dat" srcset="/img/loading.gif" lazyload alt="2"><br>点击“密钥工具”，点击“windows”，下载“支付宝开放平台密钥工具”，然后安装。<br><img src="https://lfs.k.topthink.com/lfs/d10b28e9c6e01f16a721b8714539171deb1c94d0879015913a3c4d75281ee7cd.dat" srcset="/img/loading.gif" lazyload alt="3"><br><img src="https://lfs.k.topthink.com/lfs/20e9652e907fdcdbf4b54fea22eb492344481d451f95f6aaac9a4cc46bbbbaf3.dat" srcset="/img/loading.gif" lazyload alt="4"><br>打开“支付宝开放平台密钥工具”，点击生成密钥，然后返回支付宝开发平台，下一步短信验证，然后下一步，将我们生成的“应用公钥”填进来，私钥记下来，等一会要用<br><img src="https://lfs.k.topthink.com/lfs/e91086e9749c1da41e189a99e678f8f5a3fc54fa64cea5f449639b8d4d944e9e.dat" srcset="/img/loading.gif" lazyload alt="5"><br><img src="https://lfs.k.topthink.com/lfs/a8ce12111a14e105af75a6e3acda629115a1af1fa24e66fd50c51ea15287e805.dat" srcset="/img/loading.gif" lazyload alt="6"><br>至此小程序就配置完了</li>
+</ol>
+<h2 id="部署-宝塔示例"><a href="#部署-宝塔示例" class="headerlink" title="部署(宝塔示例)"></a>部署(宝塔示例)</h2><p>到<a target="_blank" rel="noopener" href="https://github.com/ttuuhcsj545/Alipay-Personal-Payment/archive/refs/heads/main.zip">点击下载源码</a>如无法访问<a target="_blank" rel="noopener" href="https://vip.123pan.cn/1835397970/19409691">备用地址</a>，<br>打开宝塔面板，在PHP项目里面点击新建站点，输入域名，点击确定<br><img src="https://vip.123pan.cn/1835397970/yk6baz03t0l000d7w33fgmcni7ylvqqpDIYwAID2Awr0DcxzBIex.png" srcset="/img/loading.gif" lazyload><br>完成后点击进入网站根目录，将根目录的所有文件删除，再点击上传，将我们下载的源码拖动上传<br><img src="https://vip.123pan.cn/1835397970/yk6baz03t0l000d7w33fgmcrs7ym0aiaDIYwAID2Awr0DcxzBIex.png" srcset="/img/loading.gif" lazyload><br><img src="https://vip.123pan.cn/1835397970/ymjew503t0n000d7w32y6mwbzct3n6yiDIYwAID2Awr0DcxzBIex.png" srcset="/img/loading.gif" lazyload><br>上传完成后右键压缩包点击解压,完成后进入解压后的文件夹,全选右键点击剪切，回到根目录点击粘贴</p>
 
                 
               </div>
@@ -278,9 +288,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%9A%8F%E7%AC%94/" class="print-no-link">#随笔</a>
+        <a href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/" class="print-no-link">#支付宝</a>
       
-        <a href="/tags/%E6%B5%8B%E8%AF%95/" class="print-no-link">#测试</a>
+        <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE/" class="print-no-link">#个人收款</a>
+      
+        <a href="/tags/%E8%87%AA%E5%8A%A8%E5%9B%9E%E8%B0%83/" class="print-no-link">#自动回调</a>
+      
+        <a href="/tags/%E5%85%8D%E7%AD%BE%E7%BA%A6/" class="print-no-link">#免签约</a>
       
     </div>
   
@@ -292,8 +306,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>我的第一篇文章</div>
-      <div>https://blog.lnova.top/2025/07/03/hellow/</div>
+      <div>支付宝个人收款完美方案</div>
+      <div>https://blog.lnova.top/2025/07/04/支付宝个人收款完美方案/</div>
     </div>
     <div class="license-meta">
       
@@ -305,7 +319,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年7月3日</div>
+          <div>2025年7月4日</div>
         </div>
       
       
@@ -337,15 +351,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/04/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/" title="支付宝个人收款完美方案">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">支付宝个人收款完美方案</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2025/07/03/hellow/" title="我的第一篇文章">
+                        <span class="hidden-mobile">我的第一篇文章</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
