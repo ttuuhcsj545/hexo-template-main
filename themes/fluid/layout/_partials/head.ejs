@@ -32,6 +32,10 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
   <meta name="keywords" content="<%= keywords %>">
   <% if (theme.open_graph.enable) { %>
     <%- open_graph(ogConfig) %>
+  <% } else if (page.__tag) { %>
+    <meta name="description" content="本站关于『<%= page.__tag.name %>』的所有文章，聚合多个相关内容与实战教程。">
+  <% } else if (page.__category) { %>
+    <meta name="description" content="本页展示了分类『<%= page.__category.name %>』下的所有文章，涉及相关内容与实践教程。">
   <% } else { %>
     <meta name="description" content="<%= description %>">
   <% } %>
