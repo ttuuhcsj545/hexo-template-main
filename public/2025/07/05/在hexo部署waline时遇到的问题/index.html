@@ -24,6 +24,8 @@
 
 <meta name="description" content="前言最近Edgeone非常的火，大家都在在抢兑换码,我刚好抢了一个，试了一下他的pages部署了一个hexo博客使用Fluid主题，速度还可以，今天准备加上评论系统waline,我的部署方式为LeanCloud+Vercel 问题 在本地测试评论没有问题但部署完成后但无法显示评论系统解决办法：在项目的themes&amp;#x2F;fluid&amp;#x2F;_conflg.yml配置文件中翻到最后将walin">
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
   
   <title>在hexo部署waline时遇到的问题 - Tian Zhihao的Hexo博客</title>
 
@@ -520,6 +522,32 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
   
 </div>
 
@@ -664,6 +692,8 @@
   <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
