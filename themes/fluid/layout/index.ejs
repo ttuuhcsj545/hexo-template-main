@@ -8,6 +8,7 @@ page.banner_mask_alpha = theme.index.banner_mask_alpha
 %>
 
 <% page.posts.each(function (post) { %>
+  
   <div class="row mx-auto index-card">
     <% var post_url = url_for(post.path), index_img = post.index_img || theme.post.default_index_img %>
     <% if (index_img) { %>
@@ -17,8 +18,6 @@ page.banner_mask_alpha = theme.index.banner_mask_alpha
         </a>
       </div>
     <% } %>
-
-    <h1 class="visually-hidden"><%= config.title %> - <%= config.description %></h1>
     <article class="col-12 col-md-<%= index_img ? '8' : '12' %> mx-auto index-info">
       <h2 class="index-header">
         <% if (theme.index.post_sticky && theme.index.post_sticky.enable && post.sticky > 0) { %>
