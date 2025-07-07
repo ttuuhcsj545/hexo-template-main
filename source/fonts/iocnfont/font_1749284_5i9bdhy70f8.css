@@ -3,6 +3,7 @@
   src: url('/fonts/iocnfont/font_1749284_5i9bdhy70f8.woff2') format('woff2'),
        url('/fonts/iocnfont/font_1749284_5i9bdhy70f8.woff') format('woff'),
        url('/fonts/iocnfont/font_1749284_5i9bdhy70f8.ttf') format('truetype');
+       font-display: swap;
 }
 
 .iconfont {
