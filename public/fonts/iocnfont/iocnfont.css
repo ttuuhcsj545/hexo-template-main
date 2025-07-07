@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 1736178 */
-  src: url('/source/fonts/iocnfont/font_1736178_k526ubmyhba_2.woff2') format('woff2'),
-       url('/source/fonts/iocnfont/font_1736178_k526ubmyhba.woff') format('woff'),
-       url('/source/fonts/iocnfont/font_1736178_k526ubmyhba.ttf') format('truetype');
+  src: url('/fonts/iocnfont/font_1736178_k526ubmyhba_2.woff2') format('woff2'),
+       url('/fonts/iocnfont/font_1736178_k526ubmyhba.woff') format('woff'),
+       url('/fonts/iocnfont/font_1736178_k526ubmyhba.ttf') format('truetype');
 }
 
 .iconfont {
