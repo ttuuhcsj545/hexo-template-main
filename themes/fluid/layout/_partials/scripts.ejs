@@ -1,12 +1,18 @@
 <%- partial('_partials/plugins/nprogress.ejs') %>
-<%- js_ex(theme.static_prefix.jquery, 'jquery.min.js', 'defer') %>
+
+<!-- ✅ 不加 defer，jQuery 是基础依赖 -->
+<%- js_ex(theme.static_prefix.jquery, 'jquery.min.js') %>
+
+<!-- ✅ 不加 defer，typed.js 和初始化依赖 jQuery -->
+<%- partial('_partials/plugins/typed.ejs') %>
+
+<!-- ✅ 这些可以加 defer，提高首屏速度 -->
 <%- js_ex(theme.static_prefix.bootstrap, 'js/bootstrap.min.js', 'defer') %>
 <%- js_ex(theme.static_prefix.internal_js, 'events.js', 'defer') %>
 <%- js_ex(theme.static_prefix.internal_js, 'plugins.js', 'defer') %>
 
-<%- partial('_partials/plugins/typed.ejs') %>
-
-<% if (theme.lazyload.enable){ %>
+<!-- ✅ 延迟加载图片，仅在启用 lazyload 时使用 -->
+<% if (theme.lazyload.enable) { %>
   <% if (theme.lazyload.onlypost) { %>
     <% if (is_post() || is_page()) { %>
       <%- js_ex(theme.static_prefix.internal_js, 'img-lazyload.js', 'defer') %>
@@ -16,15 +22,17 @@
   <% } %>
 <% } %>
 
+<!-- ✅ 页脚脚本片段 -->
 <% var script_snippets = deduplicate(page.script_snippets) %>
 <% for (var idx = 0; idx < script_snippets.length; idx++) { %>
   <%- script_snippets[idx] %>
 <% } %>
 <% page.script_snippets = [] %>
 
+<!-- ✅ 自定义 JS 文件，如果配置了，可以加 defer -->
 <% if (theme.custom_js) { %>
-  <%- js(theme.custom_js) %>
+  <%- js(theme.custom_js, 'defer') %>
 <% } %>
 
-<!-- 主题的启动项，将它保持在最底部 -->
+<!-- ✅ 最后加 boot.js，保持 defer -->
 <%- js_ex(theme.static_prefix.internal_js, 'boot.js', 'defer') %>

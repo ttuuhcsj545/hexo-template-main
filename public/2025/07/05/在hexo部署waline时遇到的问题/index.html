@@ -512,11 +512,11 @@
   </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
 
+<!-- ✅ 不加 defer，jQuery 是基础依赖 -->
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+
+<!-- ✅ 不加 defer，typed.js 和初始化依赖 jQuery -->
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
   <script>
@@ -535,12 +535,19 @@
 
 
 
+<!-- ✅ 这些可以加 defer，提高首屏速度 -->
+<script defer src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script defer src="/js/events.js" ></script>
+<script defer src="/js/plugins.js" ></script>
+
+<!-- ✅ 延迟加载图片，仅在启用 lazyload 时使用 -->
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script defer src="/js/img-lazyload.js" ></script>
   
 
 
+<!-- ✅ 页脚脚本片段 -->
 
 
   
@@ -640,12 +647,11 @@
 
 
 
+<!-- ✅ 自定义 JS 文件，如果配置了，可以加 defer -->
 
 
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
+<!-- ✅ 最后加 boot.js，保持 defer -->
+<script defer src="/js/boot.js" ></script>
 
   
 
