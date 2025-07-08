@@ -38,20 +38,6 @@
 
   
   <url>
-    <loc>https://blog.lnova.top/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lnova.top/tags/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lnova.top/tags/hexo/</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -74,6 +60,20 @@
   
   <url>
     <loc>https://blog.lnova.top/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lnova.top/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lnova.top/tags/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
