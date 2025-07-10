@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
   <link rel="icon" href="/img/fluid.png">
   
-    <link rel="canonical" href="https://blog.lnova.top/2025/07/03/hellow/"/>
+    <link rel="canonical" href="https://blog.lnova.top/20250704-c57d0adb26df/"/>
   
   <meta name="sogou_site_verification" content="HrPSQBzZlo" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -22,12 +22,12 @@
   <meta name="keywords" content="">
 
 
-<meta name="description" content="Hello World">
+<meta name="description" content="利用支付宝开放平台账单查询接口实现免签个人收款，配合易支付v1接口完成自动回调。">
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>我的第一篇文章 - Tian Zhihao的Hexo博客</title>
+  <title>支付宝个人收款完美方案 - Tian Zhihao的Hexo博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -44,7 +44,7 @@
 <!-- 主题依赖的图标库，不要自行修改 -->
 <!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="https://at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
 
 
 
@@ -213,13 +213,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/image/wallpaper/background11.webp') no-repeat center center; background-size: cover;">
+     style="background: url('/image/wallpaper/background7.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我的第一篇文章"></span>
+            <span id="subtitle" data-typed-text="支付宝个人收款完美方案"></span>
           
         </div>
 
@@ -230,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-03 12:00" pubdate>
-          2025年7月3日 中午
+        <time datetime="2025-07-04 10:10" pubdate>
+          2025年7月4日 上午
         </time>
       </span>
     
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1 字
+          1k 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          1 分钟
+          9 分钟
         
       </span>
     
@@ -289,12 +289,43 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">我的第一篇文章</h1>
+            <h1 id="seo-header">支付宝个人收款完美方案</h1>
             
             
               <div class="markdown-body">
                 
-                <p><strong>Hello World</strong>   </p>
+                <blockquote>
+<p>📌 本教程仅供学习与研究使用，模拟实现支付宝扫码收款的免签方案。请勿用于违法用途，否则后果自负。  </p>
+</blockquote>
+<blockquote>
+<p>本文介绍了如何通过支付宝账单轮询实现<strong>免签约自动回调</strong>的个人收款系统，包括开发者账号申请、小程序配置、源码部署与易支付接口对接等完整流程。</p>
+</blockquote>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>通过支付宝官方账单查询接口，轮询来实现回调，使用易支付v1接口演示站：<a target="_blank" rel="noopener" href="https://shop.lnova.top/item?id=3">点击前往</a></p>
+<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul>
+<li>一个已实名支付宝账号(不限年龄)</li>
+<li>一台服务器(可选)</li>
+<li>宝塔面板(可选)</li>
+</ul>
+<h2 id="部署前准备工作"><a href="#部署前准备工作" class="headerlink" title="部署前准备工作"></a>部署前准备工作</h2><h3 id="注册支付宝开发者账号"><a href="#注册支付宝开发者账号" class="headerlink" title="注册支付宝开发者账号"></a>注册支付宝开发者账号</h3><p>进入<a target="_blank" rel="noopener" href="https://open.alipay.com/">https://open.alipay.com</a> 点击右上角的登录，登录你的支付宝账号，完成之后进入控制台，第一次可能会要求你完善信息，填写即可  </p>
+<ol>
+<li>新建小程序，点击创建小程序<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-04%20103533.png" srcset="/img/loading.gif" lazyload><br>输入名称和你的账号，点击创建<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-04%20103600.png" srcset="/img/loading.gif" lazyload><br>回到控制台，点击我们刚刚创建的小程序<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-04%20103913.png" srcset="/img/loading.gif" lazyload><br>点击“开发设置”，选择接口加密方式，选择第一个“密钥”。<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/5117a5529dc8c26a876089297a4714c0ca67362e076468a2b87292641adc1443.png" srcset="/img/loading.gif" lazyload alt="1"><br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/274b3bc70c817ad0e061b32d9410aa0fed5b804a2f373e1b7dab79a8c86b46d4.png" srcset="/img/loading.gif" lazyload alt="2"><br>点击“密钥工具”，点击“windows”，下载“支付宝开放平台密钥工具”，然后安装。<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/d10b28e9c6e01f16a721b8714539171deb1c94d0879015913a3c4d75281ee7cd.png" srcset="/img/loading.gif" lazyload alt="3"><br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/20e9652e907fdcdbf4b54fea22eb492344481d451f95f6aaac9a4cc46bbbbaf3.png" srcset="/img/loading.gif" lazyload alt="4"><br>打开“支付宝开放平台密钥工具”，点击生成密钥，然后返回支付宝开发平台，下一步短信验证，然后下一步，将我们生成的“应用公钥”填进来，私钥记下来，等一会要用<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/e91086e9749c1da41e189a99e678f8f5a3fc54fa64cea5f449639b8d4d944e9e.png" srcset="/img/loading.gif" lazyload alt="5"><br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/a8ce12111a14e105af75a6e3acda629115a1af1fa24e66fd50c51ea15287e805.png" srcset="/img/loading.gif" lazyload alt="6"><br>至此小程序就配置完了</li>
+</ol>
+<h2 id="部署-宝塔示例"><a href="#部署-宝塔示例" class="headerlink" title="部署(宝塔示例)"></a>部署(宝塔示例)</h2><p>到<a target="_blank" rel="noopener" href="https://github.com/ttuuhcsj545/Alipay-Personal-Payment/archive/refs/heads/main.zip">点击下载源码</a>如无法访问<a target="_blank" rel="noopener" href="https://vip.123pan.cn/1835397970/19409691">备用地址</a>，<br>打开宝塔面板，在PHP项目里面点击新建站点，输入域名，点击确定<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-04%20123314.png" srcset="/img/loading.gif" lazyload><br>完成后点击进入网站根目录，将根目录的所有文件删除，再点击上传，将我们下载的源码拖动上传<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-04%20123738.png" srcset="/img/loading.gif" lazyload><br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-04%20124156.png" srcset="/img/loading.gif" lazyload><br>上传完成后右键压缩包点击解压,完成后进入解压后的文件夹,全选右键点击剪切，回到根目录点击粘贴<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-04%20124627.png" srcset="/img/loading.gif" lazyload><br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-04%20124736.png" srcset="/img/loading.gif" lazyload><br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-04%20124751.png" srcset="/img/loading.gif" lazyload>  </p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="config-json配置"><a href="#config-json配置" class="headerlink" title="config.json配置"></a>config.json配置</h3><p>打开config.json文件以下是文件的介绍  </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br><span class="hljs-attr">&quot;merchant_id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;你的支付宝商户Id&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-attr">&quot;MERCHANT_KEY&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;你的支付商户key可以随便填写但要记住&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-attr">&quot;APP_ID&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;你的支付宝小程序ID&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<p>要获取支付宝商户Id和小程序ID请前往<br><a href="#%E8%8E%B7%E5%8F%96%E6%94%AF%E4%BB%98%E5%AE%9D%E5%95%86%E6%88%B7id">获取支付宝商户Id</a><br><a href="#%E8%8E%B7%E5%8F%96%E5%B0%8F%E7%A8%8B%E5%BA%8Fid">获取小程序ID</a></p>
+<h3 id="密钥配置"><a href="#密钥配置" class="headerlink" title="密钥配置"></a>密钥配置</h3><p>打开RSA2048.pem文件以下是文件的介绍</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vbnet">-----BEGIN RSA <span class="hljs-keyword">PRIVATE</span> <span class="hljs-keyword">KEY</span>-----<br>刚刚支付宝生成的私钥<br>-----<span class="hljs-keyword">END</span> RSA <span class="hljs-keyword">PRIVATE</span> <span class="hljs-keyword">KEY</span>-----<br></code></pre></td></tr></table></figure>
+<p>保存</p>
+<h3 id="伪静态配置"><a href="#伪静态配置" class="headerlink" title="伪静态配置"></a>伪静态配置</h3><p>点击网站设置，点击伪静态，将伪静态规则设置为  </p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">rewrite</span><span class="hljs-regexp"> ^/pay/.*$</span> /pay.php;<br><span class="hljs-attribute">rewrite</span><span class="hljs-regexp"> ^/submit.php/.*$</span> /index.php;<br><span class="hljs-section">location</span> <span class="hljs-regexp">~* \.json$</span> &#123;<br>    <span class="hljs-attribute">deny</span> all;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>保存，配置完成</p>
+<h2 id="对接"><a href="#对接" class="headerlink" title="对接"></a>对接</h2><p>我们使用的是易支付v1接口文档请查看<a target="_blank" rel="noopener" href="https://ezfp.cn/doc.html">易支付文档</a>，注意我们仅支持文档中的页面跳转支付(submit)</p>
+<p>这里以异次元发卡平台作为演示<br>1.前往软件商店安装易支付插件<br>2.点击插件管理，点击易支付支付配置，点击添加配置<br>3.填写信息，以下是需要填写的  </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs armasm">配置名称&gt;你的配置名称<br>接口版本&gt;<span class="hljs-built_in">v1</span><br>接口地址&gt;你的网站地址<br>商户Id&gt;（可以随便填）<br>商户密钥&gt;你配置的商户密钥<br><span class="hljs-symbol">mapi</span>&gt;no<br></code></pre></td></tr></table></figure>
+<p>点击保存，前往支付接口，点击新建支付接口，选择支付插件为易支付，选择支付接口为支付宝(只支持支付宝)，选择刚刚的配置文件，再输入一些内容后，点击保存</p>
+<h2 id="获取支付宝商户id"><a href="#获取支付宝商户id" class="headerlink" title="获取支付宝商户id"></a>获取支付宝商户id</h2><p>进入支付宝开放平台鼠标放到右上角的头像上，点击【账户中心】，会跳转到账号管理，复制账号ID，这样就可以了<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/image-20.png" srcset="/img/loading.gif" lazyload alt="23"><br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/image-23.png" srcset="/img/loading.gif" lazyload alt="23"></p>
+<h2 id="获取小程序id"><a href="#获取小程序id" class="headerlink" title="获取小程序id"></a>获取小程序id</h2><p>进入小程序详情后左上角复制“应用APPID”<br><img src="/image/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/3ba011b8c48faffed9bfe20c4c5e6568105ade238d3b453c1750744d1e29a778.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -307,9 +338,17 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%9A%8F%E7%AC%94/" class="print-no-link">#随笔</a>
+        <a href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/" class="print-no-link">#支付宝</a>
       
-        <a href="/tags/%E6%B5%8B%E8%AF%95/" class="print-no-link">#测试</a>
+        <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE/" class="print-no-link">#个人收款</a>
+      
+        <a href="/tags/%E8%87%AA%E5%8A%A8%E5%9B%9E%E8%B0%83/" class="print-no-link">#自动回调</a>
+      
+        <a href="/tags/%E6%98%93%E6%94%AF%E4%BB%98/" class="print-no-link">#易支付</a>
+      
+        <a href="/tags/%E5%85%8D%E7%AD%BE%E7%BA%A6/" class="print-no-link">#免签约</a>
+      
+        <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%94%B6%E6%AC%BE/" class="print-no-link">#小程序收款</a>
       
     </div>
   
@@ -321,8 +360,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>我的第一篇文章</div>
-      <div>https://blog.lnova.top/2025/07/03/hellow/</div>
+      <div>支付宝个人收款完美方案</div>
+      <div>https://blog.lnova.top/20250704-c57d0adb26df/</div>
     </div>
     <div class="license-meta">
       
@@ -334,7 +373,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年7月3日</div>
+          <div>2025年7月4日</div>
         </div>
       
       
@@ -366,15 +405,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/04/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%AA%E4%BA%BA%E6%94%B6%E6%AC%BE%E5%AE%8C%E7%BE%8E%E6%96%B9%E6%A1%88/" title="支付宝个人收款完美方案">
+                      <a href="/20250705-1d224e772b97/" title="在hexo部署waline时遇到的问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">支付宝个人收款完美方案</span>
+                        <span class="hidden-mobile">在hexo部署waline时遇到的问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/20250703-df91b859e969/" title="我的第一篇文章">
+                        <span class="hidden-mobile">我的第一篇文章</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -389,8 +434,8 @@
   <div id="waline"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css')
-      Fluid.utils.createScript('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js', function() {
+      Fluid.utils.createCssLink('https://cdn.jsdmirror.com/npm/@waline/client@2.15.8/dist/waline.css')
+      Fluid.utils.createScript('https://cdn.jsdmirror.com/npm/@waline/client@2.15.8/dist/waline.js', function() {
         var options = Object.assign(
           {"serverURL":"https://comment.lnova.top","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdmirror.com/gh/walinejs/emojis/bilibili"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
           {
