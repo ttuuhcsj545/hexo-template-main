@@ -1,6 +1,14 @@
 <%
+  // 随机选择远程背景图编号
   var randomNum = Math.floor(Math.random() * 651) + 1;
-  var banner_img = 'https://www.loliapi.com/acg/pc/';
+  var random123 = Math.floor(Math.random() * 14) + 1;
+  // 远程背景图 URL
+  var banner_img = 'https://ttuuhcsj545.github.io/txt/images/pc/' + randomNum + '.webp';
+  // 本地备用背景图 URL（确保此文件已放置在站点或主题的 /source/images/ 下）
+
+
+  var fallback_img = '/image/wallpaper/background' + random123 + '.webp';
+
   var banner_img_height = parseFloat(page.banner_img_height || theme.index.banner_img_height);
   var banner_mask_alpha = parseFloat(page.banner_mask_alpha || theme.index.banner_mask_alpha);
   var subtitle = page.subtitle || page.title;
@@ -9,7 +17,7 @@
 <div id="banner" class="banner" <%- theme.banner && theme.banner.parallax && 'parallax=true' %>
      style="background: url('<%- url_for(banner_img) %>') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= parseFloat(banner_mask_alpha) %>)">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= banner_mask_alpha %>)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           <% if(theme.fun_features.typing.enable && in_scope(theme.fun_features.typing.scope)) { %>
@@ -32,3 +40,25 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    // 创建一个临时 Image 对象用来检测远程图是否能成功加载
+    const testImg = new Image();
+    const bannerEl = document.getElementById('banner');
+
+    testImg.onload = function () {
+      // 远程图片加载成功，不做任何处理
+    };
+
+    testImg.onerror = function () {
+      // 远程图片加载失败，切换为本地备用图
+      bannerEl.style.background = "url('<%- url_for(fallback_img) %>') no-repeat center center";
+      bannerEl.style.backgroundSize = "cover";
+      console.warn('远程背景图片加载失败，已切换为本地备用图');
+    };
+
+    // 触发图片加载检测
+    testImg.src = '<%- url_for(banner_img) %>';
+  })();
+</script>

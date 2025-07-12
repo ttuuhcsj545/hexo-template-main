@@ -207,7 +207,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://www.loliapi.com/acg/pc/') no-repeat center center; background-size: cover;">
+     style="background: url('https://ttuuhcsj545.github.io/txt/images/pc/31.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -224,6 +224,28 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    // 创建一个临时 Image 对象用来检测远程图是否能成功加载
+    const testImg = new Image();
+    const bannerEl = document.getElementById('banner');
+
+    testImg.onload = function () {
+      // 远程图片加载成功，不做任何处理
+    };
+
+    testImg.onerror = function () {
+      // 远程图片加载失败，切换为本地备用图
+      bannerEl.style.background = "url('/image/wallpaper/background11.webp') no-repeat center center";
+      bannerEl.style.backgroundSize = "cover";
+      console.warn('远程背景图片加载失败，已切换为本地备用图');
+    };
+
+    // 触发图片加载检测
+    testImg.src = 'https://ttuuhcsj545.github.io/txt/images/pc/31.webp';
+  })();
+</script>
 </div>
 
   </header>
