@@ -2,6 +2,11 @@
 // 	injects.postLeft.raw('adsense', '<div style="width: 100%;max-width: 300px;height: 600px;background-color: #f0f0f0;color: #999;display: flex;align-items: center;justify-content: center;border: 2px dashed #ccc;font-size: 16px;margin: 1rem auto;">模拟广告位<br></div>');
 // 	injects.postCopyright.raw('adsense', '<div style="width: 100%;max-width: 728px;height: 90px;background-color: #f0f0f0;color: #999;display: flex;align-items: center;justify-content: center;border: 2px dashed #ccc;font-size: 16px;margin: 1rem auto;">模拟广告位<br></div>');
 // });
+
+
+
+
+
 // hexo.extend.filter.register('theme_inject', function(injects) {
 // 	injects.bodyEnd.raw('adsense', '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxx" crossorigin="anonymous"></script>');
 // 	injects.head.raw('adsense', '<style>ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; }</style>');
