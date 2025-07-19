@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.lnova.top/privacy/index-1.html</loc>
+    <loc>https://blog.lnova.top/about/index.html</loc>
     
-    <lastmod>2025-07-16</lastmod>
+    <lastmod>2025-07-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -20,15 +20,6 @@
   </url>
   
   <url>
-    <loc>https://blog.lnova.top/about/index-2.html</loc>
-    
-    <lastmod>2025-07-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lnova.top/20250705-1d224e772b97/</loc>
     
     <lastmod>2025-07-10</lastmod>
@@ -38,25 +29,7 @@
   </url>
   
   <url>
-    <loc>https://blog.lnova.top/about/index.html</loc>
-    
-    <lastmod>2025-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lnova.top/20250703-df91b859e969/</loc>
-    
-    <lastmod>2025-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lnova.top/about/index-1.html</loc>
     
     <lastmod>2025-07-10</lastmod>
     
