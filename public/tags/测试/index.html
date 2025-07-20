@@ -204,8 +204,8 @@
 
   
 
-<div id="banner" class="banner" parallax=true
-     style="background: url('https://ttuuhcsj545.github.io/txt/images/pc/206.webp') no-repeat center center; background-size: cover;">
+<!-- 把 style 的 background 去掉，只保留 class -->
+<div id="banner" class="banner" parallax=true>
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -229,23 +229,49 @@
 
 <script>
   (function () {
-    // 创建一个临时 Image 对象用来检测远程图是否能成功加载
-    const testImg = new Image();
     const bannerEl = document.getElementById('banner');
+    const randomNum = 432;
+    const random123 = 1;
 
-    testImg.onload = function () {
-      // 远程图片加载成功，不做任何处理
-    };
+    const fallbackImg = "/image/wallpaper/background" + random123 + ".webp";
+    const foreignImg = "https://ttuuhcsj545.github.io/txt/images/pc/" + randomNum + ".webp";
+    const localImg = "https://gitee.com/internasxs/txt/raw/main/images/pc/" + randomNum + ".webp";
 
-    testImg.onerror = function () {
-      // 远程图片加载失败，切换为本地备用图
-      bannerEl.style.background = "url('/image/wallpaper/background9.webp') no-repeat center center";
-      bannerEl.style.backgroundSize = "cover";
-      console.warn('远程背景图片加载失败，已切换为本地备用图');
-    };
+    window.isDomesticUser = null;
 
-    // 触发图片加载检测
-    testImg.src = 'https://ttuuhcsj545.github.io/txt/images/pc/206.webp';
+    async function detectUserRegionAndSetBackground() {
+      let selectedImg = foreignImg;
+
+      try {
+        const res = await fetch('https://ipinfo.liiiil.dpdns.org/n');
+        const text = await res.text();
+        window.isDomesticUser = text.trim() === 'true';
+        console.log('地区检测结果：', window.isDomesticUser);
+
+        if (window.isDomesticUser) {
+          selectedImg = localImg;
+        }
+      } catch (e) {
+        console.error('地区检测失败，默认使用国外资源');
+      }
+
+      const img = new Image();
+
+      img.onload = function () {
+        bannerEl.style.background = `url('${selectedImg}') no-repeat center center`;
+        bannerEl.style.backgroundSize = 'cover';
+      };
+
+      img.onerror = function () {
+        bannerEl.style.background = `url('${fallbackImg}') no-repeat center center`;
+        bannerEl.style.backgroundSize = 'cover';
+        console.warn('背景图加载失败，已切换备用图');
+      };
+
+      img.src = selectedImg;
+    }
+
+    detectUserRegionAndSetBackground();
   })();
 </script>
 </div>
@@ -399,6 +425,23 @@
     }
   });
 </script>
+<!-- <script>
+  window.isDomesticUser = null;
+
+  async function detectUserRegion() {
+    try {
+      const res = await fetch('https://ipinfo.liiiil.dpdns.org/');
+      const text = await res.text();
+      window.isDomesticUser = text.trim() === 'true';
+      console.log('地区检测结果：', window.isDomesticUser);
+    } catch (e) {
+      window.isDomesticUser = false;
+      console.error('地区检测失败，默认国外');
+    }
+  }
+
+  detectUserRegion();
+</script> -->
 
 </div>
 

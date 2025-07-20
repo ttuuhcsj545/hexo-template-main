@@ -39,5 +39,22 @@
     }
   });
 </script>
+<!-- <script>
+  window.isDomesticUser = null;
+
+  async function detectUserRegion() {
+    try {
+      const res = await fetch('https://ipinfo.liiiil.dpdns.org/');
+      const text = await res.text();
+      window.isDomesticUser = text.trim() === 'true';
+      console.log('地区检测结果：', window.isDomesticUser);
+    } catch (e) {
+      window.isDomesticUser = false;
+      console.error('地区检测失败，默认国外');
+    }
+  }
+
+  detectUserRegion();
+</script> -->
 
 </div>

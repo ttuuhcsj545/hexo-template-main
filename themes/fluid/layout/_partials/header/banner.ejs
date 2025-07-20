@@ -2,11 +2,11 @@
   // 随机选择远程背景图编号
   var randomNum = Math.floor(Math.random() * 651) + 1;
   var random123 = Math.floor(Math.random() * 14) + 1;
-  // 远程背景图 URL
-  var banner_img = 'https://ttuuhcsj545.github.io/txt/images/pc/' + randomNum + '.webp';
-  // 本地备用背景图 URL（确保此文件已放置在站点或主题的 /source/images/ 下）
 
+  // 默认远程图（国外）
+  var foreign_img = 'https://ttuuhcsj545.github.io/txt/images/pc/' + randomNum + '.webp';
 
+  // 本地备用图（Hexo 本地资源）
   var fallback_img = '/image/wallpaper/background' + random123 + '.webp';
 
   var banner_img_height = parseFloat(page.banner_img_height || theme.index.banner_img_height);
@@ -14,8 +14,8 @@
   var subtitle = page.subtitle || page.title;
 %>
 
-<div id="banner" class="banner" <%- theme.banner && theme.banner.parallax && 'parallax=true' %>
-     style="background: url('<%- url_for(banner_img) %>') no-repeat center center; background-size: cover;">
+<!-- 把 style 的 background 去掉，只保留 class -->
+<div id="banner" class="banner" <%- theme.banner && theme.banner.parallax && 'parallax=true' %>>
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= banner_mask_alpha %>)">
       <div class="banner-text text-center fade-in-up">
@@ -43,22 +43,48 @@
 
 <script>
   (function () {
-    // 创建一个临时 Image 对象用来检测远程图是否能成功加载
-    const testImg = new Image();
     const bannerEl = document.getElementById('banner');
+    const randomNum = <%= randomNum %>;
+    const random123 = <%= random123 %>;
 
-    testImg.onload = function () {
-      // 远程图片加载成功，不做任何处理
-    };
+    const fallbackImg = "/image/wallpaper/background" + random123 + ".webp";
+    const foreignImg = "https://ttuuhcsj545.github.io/txt/images/pc/" + randomNum + ".webp";
+    const localImg = "https://gitee.com/internasxs/txt/raw/main/images/pc/" + randomNum + ".webp";
 
-    testImg.onerror = function () {
-      // 远程图片加载失败，切换为本地备用图
-      bannerEl.style.background = "url('<%- url_for(fallback_img) %>') no-repeat center center";
-      bannerEl.style.backgroundSize = "cover";
-      console.warn('远程背景图片加载失败，已切换为本地备用图');
-    };
+    window.isDomesticUser = null;
 
-    // 触发图片加载检测
-    testImg.src = '<%- url_for(banner_img) %>';
+    async function detectUserRegionAndSetBackground() {
+      let selectedImg = foreignImg;
+
+      try {
+        const res = await fetch('https://ipinfo.liiiil.dpdns.org/');
+        const text = await res.text();
+        window.isDomesticUser = text.trim() === 'true';
+        console.log('地区检测结果：', window.isDomesticUser);
+
+        if (window.isDomesticUser) {
+          selectedImg = localImg;
+        }
+      } catch (e) {
+        console.error('地区检测失败，默认使用国外资源');
+      }
+
+      const img = new Image();
+
+      img.onload = function () {
+        bannerEl.style.background = `url('${selectedImg}') no-repeat center center`;
+        bannerEl.style.backgroundSize = 'cover';
+      };
+
+      img.onerror = function () {
+        bannerEl.style.background = `url('${fallbackImg}') no-repeat center center`;
+        bannerEl.style.backgroundSize = 'cover';
+        console.warn('背景图加载失败，已切换备用图');
+      };
+
+      img.src = selectedImg;
+    }
+
+    detectUserRegionAndSetBackground();
   })();
 </script>
