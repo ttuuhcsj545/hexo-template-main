@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
   <link rel="icon" href="/img/fluid.png">
   
-    <link rel="canonical" href="https://blog.lnova.top/20250703-df91b859e969/"/>
+    <link rel="canonical" href="https://blog.lnova.top/20250721-b196783b65f4/"/>
   
   <meta name="sogou_site_verification" content="HrPSQBzZlo" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -24,10 +24,10 @@
   <meta name="google-adsense-account" content="ca-pub-6668637539770344">
 
 
-<meta name="description" content="Hello World">
+<meta name="description" content="Windows7在升级Windows10时遇到的问题,出现0x80072f8f-0x20000的解决方案,启动安装程序时出现问题,解决方案">
   
   
-  <title>我的第一篇文章 - Tian Zhihao的Hexo博客</title>
+  <title>Windows7在升级Windows10时遇到的问题 - Tian Zhihao的Hexo博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我的第一篇文章"></span>
+            <span id="subtitle" data-typed-text="Windows7在升级Windows10时遇到的问题"></span>
           
         </div>
 
@@ -230,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-03 12:00" pubdate>
-          2025年7月3日 中午
+        <time datetime="2025-07-21 16:10" pubdate>
+          2025年7月21日 下午
         </time>
       </span>
     
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1 字
+          495 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -297,12 +297,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">我的第一篇文章</h1>
+            <h1 id="seo-header">Windows7在升级Windows10时遇到的问题</h1>
             
             
               <div class="markdown-body">
                 
-                <p><strong>Hello World</strong>   </p>
+                <h2 id="Windows7在升级Windows10时出现0x80072f8f-0x20000"><a href="#Windows7在升级Windows10时出现0x80072f8f-0x20000" class="headerlink" title="Windows7在升级Windows10时出现0x80072f8f-0x20000"></a>Windows7在升级Windows10时出现0x80072f8f-0x20000</h2><h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案-1"></a>解决方案-1</h3><p>下载地址：<a target="_blank" rel="noopener" href="https://download.microsoft.com/download/0/6/5/0658B1A7-6D2E-474F-BC2C-D69E5B9E9A68/MicrosoftEasyFix51044.msi">https://download.microsoft.com/download/0/6/5/0658B1A7-6D2E-474F-BC2C-D69E5B9E9A68/MicrosoftEasyFix51044.msi</a><br><a target="_blank" rel="noopener" href="https://download.microsoft.com/download/0/6/5/0658B1A7-6D2E-474F-BC2C-D69E5B9E9A68/MicrosoftEasyFix51044.msi">点击下载</a><br>安装 MicrosoftEasyFix51044.msi，安装后重启就能正常的运行升级工具了<br><img src="/image/Windows7%E5%9C%A8%E5%8D%87%E7%BA%A7Windows10%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-21%20161448.png" srcset="/img/maomao.gif" lazyload alt="tupina">  </p>
+<h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案-2"></a>解决方案-2</h3><p>首先电脑键盘按win+R键调出运行框，输入Regedit进入注册表编辑器，然后<br>按照下面的路径(32位win7系统和64位win7系统路径有一点点小区别)依次找到<br>以下为64位win7路径：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">HKEY_LOCAL_MACHINE</span><br><br>SOFTWARE_WOW6432NODE_MICROSOFT_WINDOWS_<br><br>CURRENTVERSION_INTERNET SETTINGS_WINHTTP<br></code></pre></td></tr></table></figure>
+<p>以下是32位win7系统路径：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">HKEY_LOCAL_MACHINE</span><br><span class="hljs-attribute"></span><br><span class="hljs-attribute">SOFTWARE_MICROSOFT_WINDOWS</span><br><span class="hljs-attribute"></span><br><span class="hljs-attribute">CURRENTVERSION_INTERNET SETTINGS_WINHTTP</span><br></code></pre></td></tr></table></figure>
+<p>右键新建DWORD32位值，名称设置为</p>
+<p><code>DefaultSecureProtocols</code></p>
+<p>设置好后修改十六位数值为<code>a00</code></p>
+<p>重启</p>
+<h2 id="Windows7在升级Windows10时出现启动安装程序时出现问题"><a href="#Windows7在升级Windows10时出现启动安装程序时出现问题" class="headerlink" title="Windows7在升级Windows10时出现启动安装程序时出现问题"></a>Windows7在升级Windows10时出现启动安装程序时出现问题</h2><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>1、检查WindowsModulesInstaller服务：按下<code>Win+X</code>打开开始菜单，选择“运行”。输入<code>services.msc</code>并点击确定进入服务控制面板。找到<code>WindowsModulesInstaller</code>服务。如果该服务被禁用，双击打开属性，选择启动类型为“自动”，然后重启计算机。  </p>
+<p>2、确保使用最新版本的Windows安装程序：如果不是最新版本，尝试下载更新的版本。检查电脑是否满足Windows的最低系统要求。如果不满足，则无法安装Windows。  </p>
+<p>3、暂时禁用防病毒软件和防火墙：有时防病毒软件和防火墙可能会阻止安装程序的正常运行。  </p>
+<p>4、使用官方Windows10ISO镜像：从Microsoft官方网站下载Windows10ISO镜像文件，并使用刻录工具将其刻录到USB设备或DVD上。使用该设备进行安装。  </p>
+<p>5、使用故障排除程序：如果以上方法都无法解决问题，可以尝试使用Windows10自带的故障排除程序修复问题。在Windows10设置中搜索“故障排除”即可找到该功能。  </p>
+<p>6、联系Microsoft官方客服：如果问题依然无法解决，建议联系Microsoft官方客服进行进一步的技术支持和帮助。</p>
 
                 
               </div>
@@ -315,9 +329,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%9A%8F%E7%AC%94/" class="print-no-link">#随笔</a>
+        <a href="/tags/Windows10/" class="print-no-link">#Windows10</a>
       
-        <a href="/tags/%E6%B5%8B%E8%AF%95/" class="print-no-link">#测试</a>
+        <a href="/tags/%E5%8D%87%E7%BA%A7/" class="print-no-link">#升级</a>
       
     </div>
   
@@ -329,8 +343,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>我的第一篇文章</div>
-      <div>https://blog.lnova.top/20250703-df91b859e969/</div>
+      <div>Windows7在升级Windows10时遇到的问题</div>
+      <div>https://blog.lnova.top/20250721-b196783b65f4/</div>
     </div>
     <div class="license-meta">
       
@@ -342,7 +356,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年7月3日</div>
+          <div>2025年7月21日</div>
         </div>
       
       
@@ -374,15 +388,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/20250704-c57d0adb26df/" title="支付宝个人收款完美方案">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">支付宝个人收款完美方案</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/20250705-1d224e772b97/" title="在hexo部署waline时遇到的问题">
+                        <span class="hidden-mobile">在hexo部署waline时遇到的问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
