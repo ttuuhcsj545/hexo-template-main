@@ -1,18 +1,4 @@
 <%
-var separator = theme.title_join_string || theme.tab_title_separator
-var title = page.title ? [page.title, config.title].join(separator) : config.title
-var keywords = page.keywords || config.keywords
-if (keywords instanceof Array) {
-  keywords = keywords.join(',')
-}
-var description = page.description || page.excerpt || (is_post() && page.content) || config.description
-if (description) {
-  description = strip_html(description).substring(0, 200).trim().replace(/\n/g, ' ')
-}
-var ogImage = page.og_img || page.index_img
-var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_graph)
-%>
-
 <head>
   <meta charset="UTF-8">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6668637539770344"
@@ -31,6 +17,7 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
   <meta name="theme-color" content="<%= theme.color.navbar_bg_color %>">
   <meta name="author" content="<%= page.author || config.author %>">
   <meta name="keywords" content="<%= keywords %>">
+  <meta name="google-adsense-account" content="ca-pub-6668637539770344">
 <%
   var descriptionContent = description;
   if (!descriptionContent) {
