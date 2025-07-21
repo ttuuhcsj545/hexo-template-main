@@ -210,7 +210,8 @@
 
   
 
-<div id="banner" class="banner" parallax=true>
+<div id="banner" class="banner" parallax=true
+  style="background: url('https://images.zy.lnova.top') no-repeat center center; background-size: cover;">>
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -268,52 +269,6 @@
   </div>
 </div>
 
-<script>
-  (function () {
-    const bannerEl = document.getElementById('banner');
-
-    // ✅ 客户端执行的随机逻辑
-    const randomNum = Math.floor(Math.random() * 651) + 1;      // 外部图
-    const random123 = Math.floor(Math.random() * 14) + 1;       // 本地备用图
-
-    const fallbackImg = "/image/wallpaper/background" + random123 + ".webp";
-    const foreignImg = "https://ttuuhcsj545.github.io/txt/images/pc/" + randomNum + ".webp";
-    const localImg   = "https://gitee.com/internasxs/txt/raw/main/images/pc/" + randomNum + ".webp";
-
-    window.isDomesticUser = null;
-
-    async function detectUserRegionAndSetBackground() {
-      let selectedImg = foreignImg;
-
-      try {
-        const res = await fetch('https://ipinfo.liiiil.dpdns.org/');
-        const text = await res.text();
-        window.isDomesticUser = text.trim() === 'true';
-        console.log('地区检测结果：', window.isDomesticUser);
-
-        if (window.isDomesticUser) {
-          selectedImg = localImg;
-        }
-      } catch (e) {
-        console.error('地区检测失败，默认使用国外图：', foreignImg);
-      }
-
-      const img = new Image();
-      img.onload = function () {
-        bannerEl.style.background = `url('${selectedImg}') no-repeat center center`;
-        bannerEl.style.backgroundSize = 'cover';
-      };
-      img.onerror = function () {
-        bannerEl.style.background = `url('${fallbackImg}') no-repeat center center`;
-        bannerEl.style.backgroundSize = 'cover';
-        console.warn('图片加载失败，使用备用图：', fallbackImg);
-      };
-      img.src = selectedImg;
-    }
-
-    detectUserRegionAndSetBackground();
-  })();
-</script>
 </div>
 
     <script type="text/javascript">
@@ -683,6 +638,7 @@
 
   detectUserRegion();
 </script> -->
+
 
 </div>
 
