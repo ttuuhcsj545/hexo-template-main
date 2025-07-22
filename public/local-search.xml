@@ -79,6 +79,31 @@
   
   
   <entry>
+    <title>清理Windows资源管理器里的百度网盘和夸克网盘残留图标</title>
+    <link href="/20250704-d94bcddd97d3/"/>
+    <url>/20250704-d94bcddd97d3/</url>
+    
+    <content type="html"><![CDATA[<h2 id="问题现状"><a href="#问题现状" class="headerlink" title="问题现状"></a>问题现状</h2><p>在卸载百度网盘或者夸克网盘的时候可能没有使用官方的卸载工具卸载了该软件，导致注册表有残余就导致了这种情况，Windows资源管理器里的百度网盘和夸克网盘残留图标如下图<br><img src="/image/%E6%B8%85%E7%90%86Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8C%E7%9A%84%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%92%8C%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E6%AE%8B%E7%95%99%E5%9B%BE%E6%A0%87/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-22%20173214.png" alt="Windows资源文件管理器"><br>开始之前建议备份一下注册表<a href="https://support.microsoft.com/zh-cn/topic/%E5%A6%82%E4%BD%95%E5%9C%A8-windows-%E4%B8%AD%E5%A4%87%E4%BB%BD%E5%92%8C%E8%BF%98%E5%8E%9F%E6%B3%A8%E5%86%8C%E8%A1%A8-855140ad-e318-2a13-2829-d428a2ab0692">点击进入注册表备份和恢复教程</a></p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>要解决这种问题就要从注册表去删除百度网盘和夸克网盘注册的内容</p><h2 id="百度网盘"><a href="#百度网盘" class="headerlink" title="百度网盘"></a>百度网盘</h2><ol><li>按win+r打开运行窗口输入<code>regedit</code>点击确定打开注册表编辑器<br><img src="/image/%E6%B8%85%E7%90%86Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8C%E7%9A%84%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%92%8C%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E6%AE%8B%E7%95%99%E5%9B%BE%E6%A0%87/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-22%20173627.png" alt="打开注册表编辑"><br><img src="/image/%E6%B8%85%E7%90%86Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8C%E7%9A%84%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%92%8C%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E6%AE%8B%E7%95%99%E5%9B%BE%E6%A0%87/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-22%20173724.png" alt="打开注册表编辑"></li><li>在上方地址栏输入<code>计算机\HKEY_CLASSES_ROOT\CLSID\&#123;679F137C-3162-45da-BE3C-2F9C3D093F64&#125;</code>回车<br><img src="/image/%E6%B8%85%E7%90%86Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8C%E7%9A%84%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%92%8C%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E6%AE%8B%E7%95%99%E5%9B%BE%E6%A0%87/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-22%20173922.png" alt="打开注册表编辑"></li><li>找到选中的注册表项，右键点击删除<br><img src="/image/%E6%B8%85%E7%90%86Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8C%E7%9A%84%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%92%8C%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E6%AE%8B%E7%95%99%E5%9B%BE%E6%A0%87/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-22%20173927.png" alt="打开注册表编辑"><br>百度网盘就清理完了，可以重启一下</li></ol><h2 id="夸克网盘"><a href="#夸克网盘" class="headerlink" title="夸克网盘"></a>夸克网盘</h2><p>和百度网盘差不多一样，只是输入的路径不一样win+r打开注册表编辑器后在上方输入框输入<br><code>计算机\HKEY_CLASSES_ROOT\CLSID\&#123;82ca84ef-374c-5058-ba56-bb3ddca980c4&#125;</code><br><img src="/image/%E6%B8%85%E7%90%86Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8C%E7%9A%84%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%92%8C%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E6%AE%8B%E7%95%99%E5%9B%BE%E6%A0%87/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-22%20173606.png" alt="打开注册表编辑"><br>然后找到选中的注册表项，右键点击删除<br><img src="/image/%E6%B8%85%E7%90%86Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8C%E7%9A%84%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%92%8C%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E6%AE%8B%E7%95%99%E5%9B%BE%E6%A0%87/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-22%20173848.png" alt="打开注册表编辑"></p><p>夸克网盘就清理完了，可以重启一下</p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>如果输入路径后找不到，可以按ctrl+f调起注册表搜索输入百度网盘或夸克网盘，点击查找下一个，找到后将选中的注册表项删除即可<br><img src="/image/%E6%B8%85%E7%90%86Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8C%E7%9A%84%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%92%8C%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E6%AE%8B%E7%95%99%E5%9B%BE%E6%A0%87/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-22%20180734.png" alt="打开注册表编辑"><br><img src="/image/%E6%B8%85%E7%90%86Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E9%87%8C%E7%9A%84%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%92%8C%E5%A4%B8%E5%85%8B%E7%BD%91%E7%9B%98%E6%AE%8B%E7%95%99%E5%9B%BE%E6%A0%87/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-22%20180824.png" alt="打开注册表编辑"><br>最后重启一下</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>windows10</tag>
+      
+      <tag>百度网盘</tag>
+      
+      <tag>夸克网盘</tag>
+      
+      <tag>清理残留</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>我的第一篇文章</title>
     <link href="/20250703-df91b859e969/"/>
     <url>/20250703-df91b859e969/</url>
