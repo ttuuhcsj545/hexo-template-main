@@ -2282,3 +2282,11 @@ input[type=checkbox] {
     margin-left: 1rem;
   }
 }
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+::-moz-selection {
+  background-color: #000;
+  color: #fff;
+}

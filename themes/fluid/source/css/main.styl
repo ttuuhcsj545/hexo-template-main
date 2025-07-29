@@ -17,3 +17,13 @@ for $inject_mixin in hexo-config("injects.mixin")
 
 for $inject_style in hexo-config("injects.style")
   @import $inject_style;
+// Custom selection style
+::selection {
+  background-color: black; // 选中时的背景色为黑色
+  color: white;           // 选中时的文字颜色为白色
+}
+
+::-moz-selection {
+  background-color: black; // 兼容 Firefox 选中时的背景色为黑色
+  color: white;           // 兼容 Firefox 选中时的文字颜色为白色
+}
