@@ -25,6 +25,27 @@
   
   
   <entry>
+    <title>2025年最新免费静态网站托管服务对比</title>
+    <link href="/20250721-423ae423e7fd/"/>
+    <url>/20250721-423ae423e7fd/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文将分享几个免费的静态网站托管平台及其在国内的网站速度对比以供选择。</p></blockquote><h2 id="1-GitHub-Pages"><a href="#1-GitHub-Pages" class="headerlink" title="1.GitHub Pages"></a>1.GitHub Pages</h2><p>简介：全球最大的代码托管平台。<br>优点：稳定性强，部署简单，使用方便，支持自定义域名。<br>缺点：国内访问速度一般，拒绝百度爬虫访问。<br>个人观点：如果不想太折腾并且对百度收录没有要求的话可以选择 GitHub Pages。<br><a href="https://github.com/">前往官网</a><br>网站测速：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/github%E6%B5%8B%E9%80%9F%E7%BB%93%E6%9E%9C.png" alt="github"><br>网站TCping：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/githubTCping%E7%BB%93%E6%9E%9C.png" alt="github"></p><h2 id="2-Cloudflare-Pages"><a href="#2-Cloudflare-Pages" class="headerlink" title="2.Cloudflare Pages"></a>2.Cloudflare Pages</h2><p>简介：Cloudflare 推出的全新网页托管服务。<br>优点：不限站点数、请求数和带宽，全球都拥有 CDN 节点，支持自定义域名和自动部署。<br>缺点：国内访问速度和稳定性一般，每月构建次数、文件数量和大小都有限制。<br>个人观点：放弃GitHub Pages 后的一个选择，稳定性不好，经常超时，不过有时候挺快的。<br><a href="https://pages.cloudflare.com/">前往官网</a><br>网站测速：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/cloudflare%E6%B5%8B%E9%80%9F%E7%BB%93%E6%9E%9C.png" alt="cloudflare"><br>网站TCping：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/cloudflareTCping%E7%BB%93%E6%9E%9C.png" alt="cloudflare">  </p><h2 id="3-Vercel"><a href="#3-Vercel" class="headerlink" title="3.Vercel"></a>3.Vercel</h2><p>简介：一个开箱即用的网站托管服务，全球都拥有 CDN 节点，支持自定义域名和自动部署，前身叫 ZEIT。  </p><p>优点：国内访问速度比 Github Pages 和 Cloudflare Pages 要快，支持自定义域名和自动部署。  </p><p>缺点：构建次数和构建时长有限制，每月带宽限制 100G。<br><a href="https://vercel.com/">前往官网</a><br>网站测速：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/vercel%E6%B5%8B%E9%80%9F%E7%BB%93%E6%9E%9C.png" alt="Vercel"><br>网站TCping：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/vercelTCping%E7%BB%93%E6%9E%9C.png" alt="Vercel">  </p><h2 id="4-Netlify"><a href="#4-Netlify" class="headerlink" title="4.Netlify"></a>4.Netlify</h2><p>简介：提供自动化部署、CDN 和无服务器功能的开发平台。</p><p>优点：</p><p>极简部署：Git 自动集成，持续部署。</p><p>全球 CDN：高性能内容分发。</p><p>免费层慷慨：大部分小型项目适用。</p><p>原子部署：网站更新平滑，无中间状态。</p><p>部署预览：方便团队协作。</p><p>无服务器：提供 Functions、Forms 等附加服务。</p><p>缺点：</p><p>免费层有配额：高用量需付费。</p><p>后端有限：不适合复杂、持久的后端服务。  </p><p>学习曲线：高级功能和 Jamstack 概念需学习。<br><a href="https://netlify.com/">前往官网</a><br>网站测速：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/netlify%E6%B5%8B%E9%80%9F%E7%BB%93%E6%9E%9C.png" alt="Vercel"><br>网站TCping：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/netfilyTCping%E7%BB%93%E6%9E%9C.png" alt="Vercel">   </p><h2 id="5-GitLab-Pages"><a href="#5-GitLab-Pages" class="headerlink" title="5.GitLab Pages"></a>5.GitLab Pages</h2><p>简介：GitLab 提供的免费静态网站托管服务，与 GitLab CI&#x2F;CD 深度集成。<br>优点：<br>免费：公共和部分私有仓库免费。<br>CI&#x2F;CD 强大：与 GitLab CI&#x2F;CD 无缝配合，自动化部署。<br>版本控制：网站代码在 Git 仓库里，易于管理。<br>自定义域名&#x2F;HTTPS：支持自定义域名和免费 SSL。<br>私有仓库友好：免费账户也可用于私有仓库。<br>缺点：<br>仅静态：不支持动态后端。<br>需配置 CI&#x2F;CD：部署需编写 .gitlab-ci.yml，对新手有门槛。<br>性能一般：CDN 优势不如 Vercel&#x2F;Netlify 突出。<br>生态有限：附加服务不如专业平台丰富。<br><a href="https://gitlab.com/pages">前往官网</a><br>网站测速：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/gitlab%E6%B5%8B%E9%80%9F.png" alt="Vercel"><br>网站TCping：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/gitlabTCping%E7%BB%93%E6%9E%9C.png" alt="Vercel">  </p><h2 id="6-EdgeOne-Pages"><a href="#6-EdgeOne-Pages" class="headerlink" title="6.EdgeOne Pages"></a>6.EdgeOne Pages</h2><p>简介：EdgeOne Pages 是又拍云（UPYUN）推出的一项服务，专注于为静态网站提供托管和加速。它利用又拍云在全球的 CDN 节点，为静态资源提供快速分发。</p><p>优点：</p><p>免费额度：提供免费额度，适合个人项目或低流量网站。<br>部署简便：支持多种部署方式，通常可以与 Git 仓库集成，实现自动部署。</p><p>自定义域名：支持绑定自定义域名，并提供免费的 SSL 证书。</p><p>中国大陆优化：作为国内服务商，其 CDN 在中国大陆地区的访问速度和稳定性通常表现优异。</p><p>缺点：</p><p>相对小众：相比国际知名的 GitHub Pages、Vercel、Netlify，其开发者社区和文档资源可能相对较少。</p><p>免费额度限制：超出免费额度后需要付费，具体费用模型需查阅官方文档</p><p><a href="https://edgeone.ai/">前往官网</a><br>网站测速：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/edgeone%E6%B5%8B%E9%80%9F%E7%BB%93%E6%9E%9C.png" alt="Vercel"><br>网站TCping：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/edgeoneTCping%E7%BB%93%E6%9E%9C.png" alt="Vercel">  </p><h2 id="7-Render"><a href="#7-Render" class="headerlink" title="7.Render"></a>7.Render</h2><p>简介：一个现代云平台，提供静态网站、Web 服务、数据库等托管服务，特点是简单易用和高性能。</p><p>优点：</p><p>多功能：不仅能托管静态网站，还能部署全栈应用和数据库。</p><p>免费层慷慨：提供免费额度用于静态网站，甚至包含一些基础的 Web 服务。</p><p>全球 CDN：提供内容分发网络加速。</p><p>自动 HTTPS：免费提供 SSL 证书。</p><p>缺点：</p><p>免费层配额：高流量或复杂应用可能需要升级。</p><p>全栈复杂性：如果只是托管简单 HTML，功能可能显得多余。</p><p>启动时间：免费 Web 服务（非静态）在空闲一段时间后可能会有冷启动延迟。<br><a href="https://render.com/">前往官网</a><br>网站测速：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/Render%E6%B5%8B%E9%80%9F.png" alt="Vercel"><br>网站TCping：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/RenderTCping%E7%BB%93%E6%9E%9C.png" alt="Vercel">  </p><h2 id="8-static"><a href="#8-static" class="headerlink" title="8.static"></a>8.static</h2><p>简介：一个专注于简单静态网站托管的平台，以其超简单的文件上传方式为特色。</p><p>优点：</p><p>操作极简：最显著的优点是可以通过拖放 HTML 文件或整个文件夹直接部署，无需 Git 仓库。</p><p>免费托管：提供免费层，适合快速发布小型或临时网站。</p><p>免费域名&#x2F;SSL：提供免费子域名和 HTTPS 证书。</p><p>快速预览：即时上传即时预览。</p><p>缺点：</p><p>无 Git 集成：缺乏与 Git 仓库的直接集成，不适合需要版本控制和 CI&#x2F;CD 的项目。每次更新可能都需要手动上传。</p><p>功能有限：主要就是托管静态文件，不提供无服务器函数、表单处理等高级功能。</p><p>扩展性：对于需要复杂部署流程或与后端深度集成的项目不适用。<br><a href="https://static.app/">前往官网</a><br>网站测速：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/static%E6%B5%8B%E9%80%9F.png" alt="Vercel"><br>网站TCping：<br><img src="/source/image/2025%E5%B9%B4%E6%9C%80%E6%96%B0%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/staticTCping%E7%BB%93%E6%9E%9C.png" alt="Vercel">  </p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>个人博客</tag>
+      
+      <tag>静态网站</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>在hexo部署waline时遇到的问题</title>
     <link href="/20250705-1d224e772b97/"/>
     <url>/20250705-1d224e772b97/</url>
@@ -35,9 +56,9 @@
     
     <tags>
       
-      <tag>hexo</tag>
-      
       <tag>个人博客</tag>
+      
+      <tag>hexo</tag>
       
       <tag>waline</tag>
       
