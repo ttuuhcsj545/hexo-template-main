@@ -25,6 +25,11 @@ html_minifier:
   exclude: 
 
   
+clean_css:
+  exclude: 
+    - '*.min.css'
+
+  
 # 用于苹果设备的图标
 # Icon for Apple touch
 apple_touch_icon: /img/fluid.png
