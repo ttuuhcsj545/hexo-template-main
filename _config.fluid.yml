@@ -20,6 +20,11 @@
 # Icon for browser tab
 favicon: /img/fluid.png
 
+
+html_minifier:
+  exclude: 
+
+  
 # 用于苹果设备的图标
 # Icon for Apple touch
 apple_touch_icon: /img/fluid.png
@@ -470,7 +475,7 @@ footer:
     # 公安备案号，不填则只显示ICP
     police_text: 萌ICP备20250709号
     # 公安备案的图片. 为空时不显示备案图片
-    police_icon: /image/icon120.png
+    police_icon: https://img.tianzhihao.dpdns.org/icon120.webp
     # 公安备案的链接地址，点击备案号时跳转到该地址
     link: https://icp.gov.moe/?keyword=20250709
 

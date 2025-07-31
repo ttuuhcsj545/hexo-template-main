@@ -4,7 +4,7 @@ date: 2025-07-10 13:53:38
 ---
 # 关于我
 
-<p><img src="/image/wallpaper/touxiang.jpg" alt="头像" width=100px style="border-radius: 50%"></p>
+<p><img src="https://img.tianzhihao.dpdns.org/wallpaper/touxiang.webp" alt="头像" width=100px style="border-radius: 50%"></p>
 
 你好呀！我是一个正在努力学习前端开发的学生 🎓  
 喜欢猫猫 🐱、二次元 ✨、还有一切能让我的网站更酷炫的东西！

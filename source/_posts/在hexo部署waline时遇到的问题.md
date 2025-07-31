@@ -2,7 +2,7 @@
 title: 在hexo部署waline时遇到的问题
 date: 2025-07-05 14:43:00
 tags: [hexo, 个人博客,waline,评论系统]
-index_img: /image/在hexo部署waline时遇到的问题/下载.png
+index_img: https://img.tianzhihao.dpdns.org/在hexo部署waline时遇到的问题/下载.webp
 description: 在hexo部署waline时遇到的问题
 ---
 
