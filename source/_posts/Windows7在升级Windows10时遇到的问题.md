@@ -4,14 +4,14 @@ date: 2025-07-21 16:10:00
 updated: 2025-07-21 16:38:00
 tags: [Windows10,升级]
 description: Windows7在升级Windows10时遇到的问题,出现0x80072f8f-0x20000的解决方案,启动安装程序时出现问题,解决方案
-index_img: https://img.tianzhihao.dpdns.org/Windows7在升级Windows10时遇到的问题/images.webp
+index_img: Windows7在升级Windows10时遇到的问题/images.webp
 ---
 ##  Windows7在升级Windows10时出现0x80072f8f-0x20000
 ### 解决方案-1
 下载地址：https://download.microsoft.com/download/0/6/5/0658B1A7-6D2E-474F-BC2C-D69E5B9E9A68/MicrosoftEasyFix51044.msi  
 [点击下载](https://download.microsoft.com/download/0/6/5/0658B1A7-6D2E-474F-BC2C-D69E5B9E9A68/MicrosoftEasyFix51044.msi)  
 安装 MicrosoftEasyFix51044.msi，安装后重启就能正常的运行升级工具了
-![tupina](https://img.tianzhihao.dpdns.org/Windows7在升级Windows10时遇到的问题/屏幕截图%202025-07-21%20161448.webp)  
+![tupina](Windows7在升级Windows10时遇到的问题/屏幕截图%202025-07-21%20161448.webp)  
 ### 解决方案-2
 首先电脑键盘按win+R键调出运行框，输入Regedit进入注册表编辑器，然后
 按照下面的路径(32位win7系统和64位win7系统路径有一点点小区别)依次找到  

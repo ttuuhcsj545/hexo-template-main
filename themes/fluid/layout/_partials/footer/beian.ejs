@@ -33,4 +33,51 @@
       </span>
     <% } %>
   <% } %>
+
+
+<script>
+// 分流缓存核心逻辑（异步判断 CDN）
+var cdnHost = ''; // 全局变量，供后续拼接使用
+var fallbackHost = 'https://backup.example.com';
+
+var xhr = new XMLHttpRequest();
+xhr.open('HEAD', 'https://dns.tianzhihao.dpdns.org', true); // 将 false 改为 true，实现异步请求
+
+xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 400) {
+        var header = xhr.getResponseHeader('platform');
+        if (header) {
+            cdnHost = header;
+        } else {
+            cdnHost = fallbackHost;
+        }
+    } else {
+        cdnHost = fallbackHost;
+    }
+    updateImageSources(); // 请求完成后调用函数更新图片
+};
+
+xhr.onerror = function() {
+    cdnHost = fallbackHost;
+    updateImageSources(); // 请求失败也调用函数更新图片
+};
+
+xhr.send(null);
+
+function updateImageSources() {
+    if (!cdnHost.endsWith('/')) {
+        cdnHost += '/';
+    }
+
+    document.querySelectorAll('img.dynamic-img, img.Article-img').forEach(function(img) {
+        var originalSrc = img.getAttribute('cll');
+        if (originalSrc && originalSrc.startsWith('/')) {
+            originalSrc = originalSrc.substring(1);
+        }
+        if (originalSrc) { // 确保 originalSrc 不为空
+            img.src = cdnHost + originalSrc;
+        }
+    });
+}
+</script>
 </div>
