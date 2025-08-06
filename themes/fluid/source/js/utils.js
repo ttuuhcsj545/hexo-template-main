@@ -243,3 +243,13 @@ Debouncer.prototype = {
     this.requestTick();
   }
 };
+/* global Fluid, CONFIG */
+
+Fluid.utils.listenDOMLoaded(() => {
+  for (const img of document.querySelectorAll('img[lazyload]')) {
+    Fluid.utils.waitElementVisible(img, () => {
+      img.removeAttribute('srcset');
+      img.removeAttribute('lazyload');
+    }, CONFIG.lazyload.offset_factor);
+  }
+});
