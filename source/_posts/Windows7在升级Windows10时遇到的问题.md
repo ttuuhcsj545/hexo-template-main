@@ -11,7 +11,7 @@ index_img: Windows7在升级Windows10时遇到的问题/images.webp
 下载地址：https://download.microsoft.com/download/0/6/5/0658B1A7-6D2E-474F-BC2C-D69E5B9E9A68/MicrosoftEasyFix51044.msi  
 [点击下载](https://download.microsoft.com/download/0/6/5/0658B1A7-6D2E-474F-BC2C-D69E5B9E9A68/MicrosoftEasyFix51044.msi)  
 安装 MicrosoftEasyFix51044.msi，安装后重启就能正常的运行升级工具了
-![tupina](Windows7在升级Windows10时遇到的问题/屏幕截图%202025-07-21%20161448.webp)  
+![tupina](https://ttuuhcsj545.github.io/img/Windows7在升级Windows10时遇到的问题/屏幕截图%202025-07-21%20161448.webp)  
 ### 解决方案-2
 首先电脑键盘按win+R键调出运行框，输入Regedit进入注册表编辑器，然后
 按照下面的路径(32位win7系统和64位win7系统路径有一点点小区别)依次找到  

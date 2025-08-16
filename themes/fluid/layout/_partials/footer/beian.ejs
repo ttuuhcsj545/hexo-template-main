@@ -35,48 +35,91 @@
   <% } %>
 
 <script>
-// 分流缓存核心逻辑（异步判断 CDN）
-var cdnHost = ''; // 全局变量，供后续拼接使用
-var fallbackHost = 'https://backup.example.com';
+/**
+ * CDN 分流与缓存核心逻辑（异步判断 CDN 并处理多级回退）
+ *
+ * 该函数使用 Fetch API 异步检测 CDN 的可用性。
+ * 如果 CDN 不可用，它会按照优先级列表自动切换到备用 URL。
+ * 成功后，它会更新所有指定的图片链接，以避免因 CDN 故障而导致的图片加载失败。
+ */
+async function getActiveCdnHost() {
+    // 定义一个 CDN 优先级列表，可以根据“超市”场景扩展为多个备用 URL
+    const hosts = [
+        'https://dns.tianzhihao.dpdns.org',
+        'https://backup.example.com',
+        // 'https://backup2.example.com', // 更多备用 URL
+    ];
 
-var xhr = new XMLHttpRequest();
-xhr.open('HEAD', 'https://dns.tianzhihao.dpdns.org', true); // 将 false 改为 true，实现异步请求
+    // 默认回退域名，防止优先级列表为空或所有域名都失效
+    const fallbackHost = 'https://backup.example.com';
 
-xhr.onload = function() {
-    if (xhr.status >= 200 && xhr.status < 400) {
-        var header = xhr.getResponseHeader('platform');
-        if (header) {
-            cdnHost = header;
-        } else {
-            cdnHost = fallbackHost;
+    for (const host of hosts) {
+        try {
+            // 使用 Fetch API 发送一个轻量级的 HEAD 请求来检测 CDN 状态
+            const response = await fetch(host, {
+                method: 'HEAD',
+                mode: 'cors', // 确保 CORS 兼容性
+            });
+
+            // 检查响应状态码，确保它在成功的范围内 (200-299)
+            if (response.ok) {
+                // 如果 CDN 健康，尝试从响应头获取自定义域名
+                const platformHeader = response.headers.get('platform');
+                // 如果有 platform 头部，则使用它，否则使用当前检测到的 host
+                return platformHeader ? platformHeader : host;
+            }
+        } catch (error) {
+            // 网络错误或 CORS 错误会在这里被捕获
+            console.error(`CDN check failed for ${host}:`, error);
         }
-    } else {
-        cdnHost = fallbackHost;
     }
-    updateImageSources(); // 请求完成后调用函数更新图片
-};
 
-xhr.onerror = function() {
-    cdnHost = fallbackHost;
-    updateImageSources(); // 请求失败也调用函数更新图片
-};
+    // 如果所有 CDN 尝试都失败，返回默认回退域名
+    console.warn('All CDN hosts failed, using the final fallback.');
+    return fallbackHost;
+}
 
-xhr.send(null);
-
-function updateImageSources() {
+/**
+ * 负责更新页面上所有指定图片的 src 属性
+ */
+function updateImageSources(cdnHost) {
     if (!cdnHost.endsWith('/')) {
         cdnHost += '/';
     }
 
-    document.querySelectorAll('img.dynamic-img, img.Article-img').forEach(function(img) {
-        var originalSrc = img.getAttribute('cll');
-        if (originalSrc && originalSrc.startsWith('/')) {
-            originalSrc = originalSrc.substring(1);
-        }
-        if (originalSrc) { // 确保 originalSrc 不为空
-            img.src = cdnHost + originalSrc;
-        }
+    // 使用 IntersectionObserver 实现图片的懒加载和按需更新
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const originalSrc = img.getAttribute('cll');
+
+                if (originalSrc) {
+                    // 确保原始路径以 '/' 开头
+                    const cleanSrc = originalSrc.startsWith('/') ? originalSrc.substring(1) : originalSrc;
+                    img.src = cdnHost + cleanSrc;
+                }
+
+                // 更新完成后停止观察该元素
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '0px',
+        threshold: 0.1,
+    });
+
+    // 找到所有需要更新的图片并开始观察它们
+    document.querySelectorAll('img.dynamic-img, img.Article-img').forEach(img => {
+        observer.observe(img);
     });
 }
+
+// 启动函数：异步获取 CDN 主机并更新图片
+getActiveCdnHost().then(cdnHost => {
+    updateImageSources(cdnHost);
+}).catch(error => {
+    console.error('Failed to get active CDN host:', error);
+});
 </script>
 </div>
