@@ -564,7 +564,58 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
   <script src="https://image.lnova.top/candy-svg.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6668637539770344"
      crossorigin="anonymous" defer></script>
+<script>
+/**
+ * CDN 分流与缓存核心逻辑（立即执行版本）
+ *
+ * 该函数在 DOM 内容加载完成后立即开始 CDN 可用性检测。
+ * 成功获取活动 CDN 主机后，它会立刻更新所有指定的图片。
+ */
+(async function() {
+    // 定义一个 CDN 优先级列表
+    const hosts = [
+        'https://dns.tianzhihao.dpdns.org',
+        'https://backup.example.com',
+        // 可以根据需要添加更多备用 URL
+    ];
 
+    const fallbackHost = 'https://backup.example.com';
+    let cdnHost = fallbackHost; // 默认使用备用域名
+
+    for (const host of hosts) {
+        try {
+            const response = await fetch(host, {
+                method: 'HEAD',
+                mode: 'cors',
+            });
+
+            if (response.ok) {
+                const platformHeader = response.headers.get('platform');
+                cdnHost = platformHeader ? platformHeader : host;
+                console.log(`Successfully found active CDN: ${cdnHost}`);
+                break; // 找到可用的 CDN 后立即停止循环
+            }
+        } catch (error) {
+            console.error(`CDN check failed for ${host}:`, error);
+        }
+    }
+
+    // 确保 CDN 主机以 '/' 结尾
+    if (!cdnHost.endsWith('/')) {
+        cdnHost += '/';
+    }
+
+    // 更新页面上的所有图片
+    document.querySelectorAll('img.dynamic-img, img.Article-img').forEach(function(img) {
+        const originalSrc = img.getAttribute('cll');
+        if (originalSrc) {
+            const cleanSrc = originalSrc.startsWith('/') ? originalSrc.substring(1) : originalSrc;
+            img.src = cdnHost + cleanSrc;
+        }
+    });
+
+})();
+</script>
 </div>
 
 </head>
