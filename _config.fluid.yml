@@ -482,7 +482,7 @@ footer:
     # 公安备案号，不填则只显示ICP
     police_text: 萌ICP备20250709号
     # 公安备案的图片. 为空时不显示备案图片
-    police_icon: https://img.tianzhihao.dpdns.org/icon120.webp
+    police_icon: https://ttuuhcsj545.github.io/img/icon120.webp
     # 公安备案的链接地址，点击备案号时跳转到该地址
     link: https://icp.gov.moe/?keyword=20250709
 
