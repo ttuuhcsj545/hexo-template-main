@@ -5,7 +5,7 @@
 %>
 
 <div id="banner" class="banner" <%- theme.banner && theme.banner.parallax && 'parallax=true' %>
-  style="background: url('<%- url_for("https://images.zy.lnova.top") %>') no-repeat center center; background-size: cover;">
+ >
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= banner_mask_alpha %>)">
       <div class="banner-text text-center fade-in-up">
@@ -30,3 +30,13 @@
     </div>
   </div>
 </div>
+<style>
+  .banner {
+    background: url('<%- url_for("https://images.zy.lnova.top") %>') no-repeat center center; background-size: cover;
+  }
+  @media (orientation: portrait) {
+    .banner {
+      background: url('<%- url_for("https://images.zy.lnova.top/pe") %>') no-repeat center center; background-size: cover;
+    }
+  }
+</style>
