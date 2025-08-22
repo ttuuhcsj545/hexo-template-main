@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>手贱禁用进程差点导致重装系统</title>
+    <link href="/20250822-669800b76ccc/"/>
+    <url>/20250822-669800b76ccc/</url>
+    
+    <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>  今天下午在清理电脑的时候，发现电脑在待机状态下居然占用了59%的内存（16G），于是我打开任务管理器看看是谁占用了这么多的内存  </p><h2 id="经过"><a href="#经过" class="headerlink" title="经过"></a>经过</h2><p>发现了一个系统的安全扫盘进程占了百分之十几右键禁用不了，在ai和Google的帮助下还是没有成功禁用，于是我看上了另一个进程叫windows输入体验邮件禁用后又开始运行</p><h3 id="出现问题，不屑一顾"><a href="#出现问题，不屑一顾" class="headerlink" title="出现问题，不屑一顾"></a>出现问题，不屑一顾</h3><p>我再次借助ai但没有任何作用于是我在Google的帮助下找到了这篇文章<a href="https://learn.microsoft.com/zh-cn/answers/questions/4298632/windows?forum=windows-all&referrer=answers">点击进入</a><br>我按照这篇文章的指示关闭重启，然后就出现一个黑屏的界面，动了一下鼠标居然可以显示鼠标多次点击shift按键可以弹出粘滞键我以为这是个小事，我又开始在Google的帮助下搜到了好几个解决办法，可是不管什么快捷键什么的都不管用，而且我发现他们的解决方案是适用于登录后黑屏的我是直接和平的，显然不适用于我</p><h3 id="黑屏后的困境"><a href="#黑屏后的困境" class="headerlink" title="黑屏后的困境"></a>黑屏后的困境</h3><p>在我绝望之际我记起来我在前几天给一个优盘装了Windows安装媒介说不定那个可以救我，进入U盘系统后点击命名行，我准备使用命令行修改磁盘中的注册表可是在命令行里面没有找到我的系统磁盘(可能是没有挂载)，我又进入了恢复模式从安全模式进入还是黑屏</p><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>再次绝望😭，我记起来之前使用手机上的app做过pe，我又使用ETCHDROID软件制作了pe系统，电脑进入pe后再修改注册表就成功解决了，虽然问题不是很大但当时我非常的害怕特别担心自己的数据会丢失。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Windows10</tag>
+      
+      <tag>问题，微软</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>手机打开微软旗下软件登录时出现白屏</title>
     <link href="/20250818-965e87761362/"/>
     <url>/20250818-965e87761362/</url>
